@@ -7,8 +7,24 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <%= link_to "Nonprofit Home", root_path, class: "navbar-brand" %>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><%= link_to "Add Nonprofit", new_nonprofit_path %></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
+<div id="container">
+<%= flash[:alert] %>
+<%= flash[:notice] %>
 <%= yield %>
+</div>
 
 </body>
 </html>

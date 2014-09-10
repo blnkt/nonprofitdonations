@@ -1,0 +1,8 @@
+<h2> <%= @nonprofit.name %> </h2>
+
+
+<h4>Edit Nonprofit:</h4>
+<%= render 'form' %>
+
+<br>
+<p><%= link_to "Delete Nonprofit", nonprofit_path, data: {method: "delete"}, class: "btn btn-danger" %></p>
