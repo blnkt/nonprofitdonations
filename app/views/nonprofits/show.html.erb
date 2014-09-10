@@ -1,4 +1,5 @@
 <h2> <%= @nonprofit.name %> </h2>
+<h4> <%= @nonprofit.description %> </h4>
 
 <p><%= link_to "Donate to #{@nonprofit.name}", new_nonprofit_donation_path(@nonprofit), class: "btn btn-primary" %></p>
 
