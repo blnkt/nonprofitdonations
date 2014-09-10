@@ -1,8 +1,35 @@
+<article>
+  <%= form_tag nonprofits_path do %>
+    <div class="form-group">
+      <%= text_field_tag :name, nil, placeholder: "Nonprofit Name" %>
+    </div>
+    <div class="form-group">
+      <%= text_field_tag :description, nil, placeholder: "Description" %>
+    </div>
+    <div class="form-group">
+      <%= radio_button_tag(:type, "individual") %>
+      <%= label_tag(:type, "Individual") %>
+      <%= radio_button_tag(:type, "corporation") %>
+      <%= label_tag(:type, "Corporation") %>
+    </div>
+    <div class="form-group">
+      <%= email_field_tag :email, nil, placeholder: "Email" %>
+    </div>
+    <div class="form-group">
+      <%= text_field_tag :card_holder, "Cardholder Name", placeholder: "Cardholder Name" %>
+      <%= text_field_tag :card_number, "000123456789", placeholder: "Card Number" %>
+    </div>
+    <div class="form-group">
+      <%= select_tag :exp_month, options_for_select(@exp_months) %>
+      <%= select_tag :exp_year, options_for_select(@exp_years) %>
+    </div>
+    <div class="form-group">
+      <%= text_field_tag :cvc, "CVC", placeholder: "CVC" %>
+    </div>
+    <%= submit_tag "Create Nonprofit Account", class: "btn btn-danger btn-lg" %>
+  <% end %>
+</article>
 
-<%= form_for @nonprofit do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :description %>
-  <%= f.text_field :description %>
-  <%= f.submit(:class => "btn btn-success") %>
-<% end %>
+
+
+

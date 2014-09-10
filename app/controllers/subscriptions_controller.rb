@@ -23,3 +23,5 @@ class SubscriptionsController < ApplicationController
     redirect_to nonprofits_path
   end
 end
+
+
