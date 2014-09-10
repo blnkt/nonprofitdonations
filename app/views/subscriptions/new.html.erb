@@ -1,0 +1,19 @@
+<h2><%= @nonprofit.name %></h2>
+
+<%= form_tag nonprofit_subscriptions_path, :method => :post do %>
+  <article>
+    <label class="plan">
+      <%= select_tag :plan_id, options_for_select(@plans.collect{ |plan| [plan.name + ": $" + plan.amount.to_s + "/" + plan.interval, plan.id] })
+ %>
+      <%= hidden_field_tag :nonprofit_id, @nonprofit.id %>
+    </label>
+  </article>
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-name="<%= @nonprofit.name %>"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description=" Subscription"
+          data-panel-label="Subscribe"></script>
+<% end %>
+
+
+

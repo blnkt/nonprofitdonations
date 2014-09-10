@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140910184923) do
+ActiveRecord::Schema.define(version: 20140910205133) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,12 @@ ActiveRecord::Schema.define(version: 20140910184923) do
     t.string  "interval"
     t.string  "stripeid"
     t.integer "nonprofit_id"
+  end
+
+  create_table "subscriptions", force: true do |t|
+    t.integer "customer_id"
+    t.integer "nonprofit_id"
+    t.integer "plan_id"
   end
 
 end

@@ -1,7 +1,7 @@
 <h2> <%= @nonprofit.name %> </h2>
 <h4> <%= @nonprofit.description %> </h4>
 
-<p><%= link_to "Donate to #{@nonprofit.name}", new_nonprofit_donation_path(@nonprofit), class: "btn btn-primary" %></p>
+<p><%= link_to "Donate to #{@nonprofit.name}", new_nonprofit_donation_path(@nonprofit), class: "btn btn-primary" %>  <%= link_to "Subscribe to #{@nonprofit.name}", new_nonprofit_subscription_path(@nonprofit), class: "btn btn-primary" %></p>
 
 <br>
 <div id="nonprofit-only">
