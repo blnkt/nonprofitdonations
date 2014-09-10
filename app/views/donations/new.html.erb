@@ -1,0 +1,18 @@
+<h2><%= @nonprofit.name %></h2>
+
+<%= form_tag nonprofit_donations_path do %>
+  <article>
+    <label class="amount">
+      <%= text_field_tag :amount, nil, placeholder: "Donation Amount" %>
+      <%= hidden_field_tag :nonprofit_id, @nonprofit.id %>
+    </label>
+  </article>
+
+
+
+
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="One time donation"></script>
+<% end %>
+
