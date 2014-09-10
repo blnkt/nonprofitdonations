@@ -1,8 +1,18 @@
 class PlansController < ApplicationController
+  def index
+    @nonprofit = Nonprofit.find(params[:nonprofit_id])
+    @plans = Plan.all
+  end
   def new
     @plan = Plan.new
     @nonprofit = Nonprofit.new
     @nonprofit = Nonprofit.find(params[:nonprofit_id])
+    @intervals =  [
+      ['daily'],
+      ['week'],
+      ['month'],
+      ['year']
+    ]
   end
 
   def create
@@ -18,7 +28,7 @@ class PlansController < ApplicationController
         :id => @plan.stripeid
       )
       flash[:notice] = "Plan created!"
-      redirect_to nonprofits_path
+      redirect_to nonprofit_plans_path(@nonprofit)
     else
       flash[:error] = "Something went wrong"
       render'new'

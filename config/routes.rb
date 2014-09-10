@@ -3,5 +3,6 @@ Rails.application.routes.draw do
 
   resources :nonprofits do
     resources :donations
+    resources :plans
   end
 end

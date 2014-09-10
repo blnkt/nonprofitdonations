@@ -1,0 +1,14 @@
+
+<article>
+  <%= form_for [@nonprofit, @plan] do |f| %>
+    <div class="form-group">
+      <%= f.text_field :name, placeholder: "Plan Name" %>
+    </div>
+    <div class="form-group">
+      <%= f.text_field :amount, placeholder: "Amount in Dollars" %>
+      <%= f.select :interval, @intervals %>
+    </div>
+    <%= f.hidden_field :nonprofit_id, value: @nonprofit.id %>
+    <%= f.submit class: "btn btn-primary" %>
+  <% end %>
+</article>
